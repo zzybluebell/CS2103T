@@ -151,9 +151,10 @@ public class Duke {
 
                             System.out.println(INDENTATION + "Got it. I've added this task:");
                             System.out.println(INDENTATION + INDENTATION + task[order]); //toString in Deadline or Event
+                            order++;
                             System.out.println(INDENTATION + "Now you have " + order + " tasks in the list.");
                             cmdList[order] = cmd;
-                            order++;
+
                         }
                     }
 
