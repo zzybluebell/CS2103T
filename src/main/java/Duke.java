@@ -15,14 +15,13 @@ public class Duke {
     private final static String EXIT = "bye";
     private final static String LIST = "list";
     private final static String DONE = "done";
-    private final static String GIVEN_ADDED = "added: ";
     private final static String TODO = "todo";
     private final static String DEADLINE = "deadline";
     private final static String EVENT = "event";
     private static String[] cmdList = new String[100];
     private static Task[] task = new Task[100];
     private static int order = 0;
-    private static String intruction;
+    private static String instruction;
 
     /**
      * the method of greeting at starting of program.
@@ -92,8 +91,8 @@ public class Duke {
 
                     //print the task
                     else {
-                        intruction = cmd.split(" ")[0];
-                        switch (intruction) {
+                        instruction = cmd.split(" ")[0];
+                        switch (instruction) {
                             case TODO:
                                 Todo todo = new Todo(cmd.substring(5));
                                 task[order] = todo;
@@ -114,9 +113,9 @@ public class Duke {
 
                         System.out.println(INDENTATION + "Got it. I've added this task:");
                         System.out.println(INDENTATION + INDENTATION + task[order]); //toString in Deadline or Event
+                        order ++;
                         System.out.println(INDENTATION + "Now you have " + order + " tasks in the list.");
                         cmdList[order] = cmd;
-                        order++;
                     }
                 }
 
